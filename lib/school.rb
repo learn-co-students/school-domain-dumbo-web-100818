@@ -26,7 +26,10 @@ class School
   end
 
   def sort
-    @roster[grade].sort
+    # binding.pry
+    @roster.sort.values.sort to_h
+
+
   end
 
 end

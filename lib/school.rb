@@ -18,6 +18,7 @@ class School
       @roster[grade] = [student]   # => {10=>["AC Slater"]}
     else
       @roster[grade] << student
+
     end
   end
 
@@ -26,10 +27,12 @@ class School
   end
 
   def sort
-    # binding.pry
-    @roster.sort.values.sort to_h
-
-
+    @roster.each { |k, v| v.sort!}
   end
 
 end
+#@roster.keys.sort #=> [7, 9, 10]
+# @roster.each do |x, y|
+#   y.sort!
+# expected: {7=>["Blake Johnson", "Jack Bauer"], 9=>["Bart Simpson", "Homer Simpson"], 10=>["Avi Flombaum", "Jeff Baird"]}
+#      got: {7=>["Blake Johnson", "Jack Bauer"], 9=>["Homer Simpson", "Bart Simpson"], 10=>["Avi Flombaum", "Jeff Baird"]}
